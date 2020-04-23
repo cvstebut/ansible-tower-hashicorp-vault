@@ -2,7 +2,7 @@
 - name: Check Hashicorp Vault values
   hosts: all
   vars:
-    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/{{ ansible_fqdn }}: token={{ vault_token | mandatory }}')}}"
+    - key_data: "{{ lookup('hashi_vault', 'secret=kv/data/labs/{{ ansible_fqdn }}: token={{ vault_token | mandatory }}')}}"
 
   tasks:
   - name: check host values for first_line
